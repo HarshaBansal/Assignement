@@ -30,6 +30,6 @@ Vue.component('example-component',
 //});
 
 
-require('./game/first');
-require('./game/cards');
-require('./game/system_cards');
+require('./game/user_detail');
+require('./game/user_cards');
+require('./game/result');

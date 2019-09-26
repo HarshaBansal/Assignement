@@ -29,6 +29,12 @@ class CardRequestRule implements Rule
         $cardsArray =
             ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
         
+        $cards = cards($value);
+        
+        $result = count(array_intersect($cards->toArray(), $cardsArray))
+            == count($cards);
+        
+        return $result;
     }
     
     /**

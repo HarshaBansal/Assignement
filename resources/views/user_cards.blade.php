@@ -2,20 +2,21 @@
 
 <div class = "col-md-12">
     <div class = "container">
-        <div class = "row justify-content-center" id = system-cards>
+        <div class = "row justify-content-center" id = user-card>
             <div class = "form-group">
                 <div class = "col-md-12">
-                    {!! Form::hidden('store-system-cards-data-url', route('api.store-system-cards')) !!}
-                    {!! Form::hidden('user_id',$userHand->user_id) !!}
+                    {!! Form::hidden('cards-data-url', route('api.user-cards')) !!}
+                    {!! Form::hidden('user_id',request()->route('id')) !!}
                     
                     {!! Form::open(['class'=> 'form-horizontal']) !!}
                     
-                    {!! Form::label('system_cards','System Cards') !!}
-                    {!! Form::text('system_cards',implode(' ',$systemCards->toArray()),[
+                    
+                    {!! Form::label('cards','Cards') !!}
+                    {!! Form::text('cards',null,[
                         'placeholder' => 'Enter the Card Numbers',
                         'class' => 'form-control',
                         'tabindex' => '1',
-                        'readonly' => true,
+                        'required' => 'required',
                        ])
                     !!}
                     
@@ -25,7 +26,7 @@
                     <button type = "button"
                             class = "btn btn-primary btn-lg btn-block"
                             v-on:click = "submit()"
-                    >See Result
+                    >Play!
                     </button>
                 </div>
             </div>

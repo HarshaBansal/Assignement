@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@if($score->win === 0)
+@if($userGameData->win === 0)
     <h2 style = "text-align: center;">You Lost!!</h2>
 @else
     <h2 style = "text-align: center;">You Won!!</h2>

@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('first');
-})->name('first');
+    return view('user_data');
+})->name('user-data');
 
 Route::get('/cards/{id?}', function () {
-    return view('cards');
-})->name('cards');
+    return view('user_cards');
+})->name('user-cards');
 
 
-Route::get('/show/data', 'ShowDataController@getData')->name('show-data');
+Route::get('/show/data', 'ShowResultController@getData')->name('show-result');

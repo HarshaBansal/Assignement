@@ -1,29 +1,29 @@
 $(function () {
-    if ($('#system-cards').length) {
+    if ($('#user-card').length) {
         new Vue({
-            el: '#system-cards',
+            el: '#user-card',
             data: {
                 url: '',
                 userId: '',
-                systemCards: '',
+                userCard: '',
             },
             methods: {
                 submit() {
                     this.userId = $('[name=user_id]').val();
-                    this.systemCards = $('[name=system_cards]').val();
+                    this.userCard = $('[name=cards]').val();
                     
                     var data = {
                         user_id: this.userId,
-                        system_cards_data: this.systemCards
+                        user_cards: this.userCard
                     }
                     
-                    this.url = $('[name=store-system-cards-data-url]').val();
+                    this.url = $('[name=cards-data-url]').val();
                     
                     axios.post(this.url, data)
                          .then((response) => {
                              window.location = response.data.redirect
                          }).catch((error) => {
-                        let messages = error.response.data.error.message;
+                        let messages = error.response.data.error;
                         
                         messages = _.join(messages, '<br>');
                         

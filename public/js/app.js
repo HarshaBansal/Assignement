@@ -14207,7 +14207,7 @@ Vue.component('example-component', __webpack_require__(39));
 
 __webpack_require__(43);
 __webpack_require__(44);
-__webpack_require__(45);
+__webpack_require__(51);
 
 /***/ }),
 /* 13 */
@@ -49147,9 +49147,9 @@ if (false) {
 /***/ (function(module, exports) {
 
 $(function () {
-    if ($('#first').length) {
+    if ($('#user-details').length) {
         new Vue({
-            el: '#first',
+            el: '#user-details',
             data: {
                 url: '',
                 name: ''
@@ -49178,9 +49178,9 @@ $(function () {
 /***/ (function(module, exports) {
 
 $(function () {
-    if ($('#card').length) {
+    if ($('#user-card').length) {
         new Vue({
-            el: '#card',
+            el: '#user-card',
             data: {
                 url: '',
                 userId: '',
@@ -49193,7 +49193,7 @@ $(function () {
 
                     var data = {
                         user_id: this.userId,
-                        user_cards_data: this.userCard
+                        user_cards: this.userCard
                     };
 
                     this.url = $('[name=cards-data-url]').val();
@@ -49214,29 +49214,40 @@ $(function () {
 });
 
 /***/ }),
-/* 45 */
+/* 45 */,
+/* 46 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
 /***/ (function(module, exports) {
 
 $(function () {
-    if ($('#system-cards').length) {
+    if ($('#generate-cards').length) {
         new Vue({
-            el: '#system-cards',
+            el: '#generate-cards',
             data: {
                 url: '',
                 userId: '',
-                systemCards: ''
+                computerCards: ''
             },
             methods: {
                 submit: function submit() {
                     this.userId = $('[name=user_id]').val();
-                    this.systemCards = $('[name=system_cards]').val();
+                    this.computerCards = $('[name=computer_cards]').val();
 
                     var data = {
                         user_id: this.userId,
-                        system_cards_data: this.systemCards
+                        computer_cards: this.computerCards
                     };
 
-                    this.url = $('[name=store-system-cards-data-url]').val();
+                    this.url = $('[name=result-url]').val();
 
                     axios.post(this.url, data).then(function (response) {
                         window.location = response.data.redirect;
@@ -49252,12 +49263,6 @@ $(function () {
         });
     }
 });
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

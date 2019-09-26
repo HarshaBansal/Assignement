@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<div class = "container row justify-content-center" id = "first">
+<div class = "container row justify-content-center" id = "user-details">
     <div class = "col-md-8">
         {!! Form::hidden('user-data-url', route('api.user-data')) !!}
         <form @submit.prevent = "submit">

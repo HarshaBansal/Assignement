@@ -26,8 +26,8 @@
         
         <div class = "form-group">
             <div class = "col-12">
-                {!! Form::label('sysetm_hand','System Hand :  ') !!}
-                {!! Form::text('sysetm_hand',implode(' ', $systemCard->toArray()), [
+                {!! Form::label('computer_hand','Computer Hand :  ') !!}
+                {!! Form::text('computer_hand',implode(' ', $computerCard->toArray()), [
                 'class' => 'form-control',
                 'tabindex' => '1',
                 'required' => 'required',
@@ -38,8 +38,8 @@
         
         <div class = "form-group">
             <div class = "col-12">
-                {!! Form::label('system_hand','System Score : ') !!}
-                {!! Form::text('system_hand', $systemScore, [
+                {!! Form::label('computer_hand','Computer Score : ') !!}
+                {!! Form::text('computer_hand', $computerScore, [
                 'class' => 'form-control',
                 'tabindex' => '1',
                 'required' => 'required',

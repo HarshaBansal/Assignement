@@ -11,13 +11,19 @@
 |
 */
 
+use App\Http\Controllers\StoreUserScoreController;
+
 Route::group(['as' => 'api.'], function () {
     Route::post('store/data', 'UserDataController@store')->name('user-data');
-    Route::post('store/cards/data', 'UserDataController@storeCardsData')
-         ->name('store-cards-data');
-    Route::get('/system/cards/{id?}', 'SystemCardController@systemCards')
-         ->name('system-cards');
-    Route::post('/store/system/cards', 'SystemCardController@storeSystemCards')
-         ->name('store-system-cards');
+    Route::post('user/cards', 'UserDataController@userCardsData')
+         ->name('user-cards');
+    
+    Route::get('/generate/cards/{id?}',
+        'GenerateSystemCardsController@displaySystemCards')
+         ->name('generate-cards');
+    
+    Route::post('/result',
+        'StoreUserScoreController@storeUserScore')
+         ->name('user-score');
 });
 

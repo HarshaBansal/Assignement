@@ -1,7 +1,7 @@
 $(function () {
-    if ($('#first').length) {
+    if ($('#user-details').length) {
         new Vue({
-            el: '#first',
+            el: '#user-details',
             data: {
                 url: '',
                 name: ''
@@ -13,7 +13,6 @@ $(function () {
                     var data = {
                         name: this.name,
                     }
-                    
                     
                     this.url = $('[name=user-data-url]').val();
                     
