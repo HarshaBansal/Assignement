@@ -30,6 +30,7 @@ class StoreUserScoreController extends Controller
      */
     public function storeUserScore(Request $request)
     {
+        //To store the user game wise score and computer score.
         $resultData = $this->service->userScoreData($request);
         $userId = $resultData['user_id'];
         

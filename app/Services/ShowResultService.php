@@ -21,6 +21,7 @@ class ShowResultService
         $userGameData =
             UserGameModel::where('user_id', $userId)->latest()->first();
         
+        //Score of the user and Computer
         $userScore = $userGameData->user_score;
         $computerScore = $userGameData->system_score;
         

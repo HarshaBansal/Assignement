@@ -31,6 +31,7 @@ class CardRequestRule implements Rule
         
         $cards = cards($value);
         
+        //Check the cards value by the user are in correct form
         $result = count(array_intersect($cards->toArray(), $cardsArray))
             == count($cards);
         

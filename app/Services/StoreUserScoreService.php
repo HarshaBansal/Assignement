@@ -26,12 +26,14 @@ class StoreUserScoreService
         $userHandData = UserHandCard::where('user_id', $userId)->first();
         $userHandCardData = explode(' ', $userHandData->config_cards);
         
+        //To get the winner based on the user and computer hand cards.
         $winner =
             $this->getValue($userHandCardData, $computerCards);
         
         $userScore = $winner['user_count'];
         $computerScore = $winner['computer_count'];
         
+        //Storing the User Game Wise Score
         UserGameModel::create([
             'user_id'      => $userId,
             'user_score'   => $userScore,
@@ -57,6 +59,7 @@ class StoreUserScoreService
         $userCount = 0;
         $generatedCount = 0;
         
+        //to get the score of user and computer
         for ($i = 0; $i < sizeof($userHandCardData); $i++) {
             $userValue = array_search($userHandCardData[$i], $this->cardsArray);
             $generatedValue =
