@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\UserGameModel;
 use App\UserHandCard;
+use DB;
 
 class ShowResultService
 {
